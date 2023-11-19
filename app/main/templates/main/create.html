@@ -1,0 +1,17 @@
+{% extends 'main/base.html'%}
+
+{% block title %}
+{{title}}
+{% endblock %}
+{% block content %}
+<h1>Здесть ты можешь создать свой таск!</h1>
+<p>Запиши в форме ниже все свои цели </p>
+    <form method="post">
+        {% csrf_token %}
+        {{form.title}}<br>
+        {{form.tasks}}<br>
+
+        <button type="submit" class="btn btn-success">Добавить</button>
+        <span>{{error}}</span>
+    </form>
+{% endblock %}
